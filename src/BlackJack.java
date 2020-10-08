@@ -27,11 +27,11 @@ public class BlackJack {
 		System.out.print("Vuoi aggiungere una nuova carta? (y/n)");
 		String risposta = scan.next();
 		Random rand = new Random();
-		int newcarta = 1;
+		int newcarta = 0;
 		if(risposta.equals("y")) {
-			do {
+			while(newcarta == 0){
 				newcarta = rand.nextInt(13);
-			}while(newcarta == 0);
+			};
 			s = newcarta + s;
 			
 			System.out.println("Ecco la carta aggiunta: " +newcarta);
@@ -54,19 +54,19 @@ public class BlackJack {
 	
 	public static void turnoPC(int s, int black) {
 		
-		System.out.println("Adesso è il turno del PC");
+		System.out.println("Adesso Ã¨ il turno del PC");
 		Random rand = new Random();
-		int carta = 1;
-		do {
+		int carta = 0;
+		while(carta == 0){
 			carta = rand.nextInt(13);
-		}while(carta == 0);
+		};
 		System.out.println("Ecco la carta del PC: " +carta);
 		int sommaPC = carta;
 		while(sommaPC < black) {
 			if(sommaPC < 15) {
-				do {
+				while(carta == 0){
 					carta = rand.nextInt(13);
-				}while(carta == 0);
+				};
 				System.out.println("Ecco la nuova carta del PC: " +carta);
 				sommaPC = sommaPC + carta;
 				System.out.println("Ed il totale: " +sommaPC);
